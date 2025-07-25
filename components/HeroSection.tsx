@@ -44,7 +44,7 @@ export default function HeroSection() {
           <div className="relative animate-fade-in-right visible">
             <div className="relative z-10">
               <Image
-                src="/img/memcab/dien_thoai_2.png"
+                src="/img/memcab/appimg-ok.png"
                 alt="LangConnect App"
                 width={600}
                 height={700}
