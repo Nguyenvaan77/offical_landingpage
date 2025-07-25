@@ -55,15 +55,30 @@ export default function FinalCTASection() {
               {/* Right - Action Buttons */}
               <div className="flex flex-col gap-3 items-start">
                 <div className="flex flex-col gap-3 w-72">
-                  <button className="bg-white text-herb-green-600 hover:bg-gray-100 px-6 py-3 text-base font-semibold rounded-lg transition-colors w-full text-left">
+                  <a
+                    href="https://lang-connect-tpye.vercel.app/thay-lang"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-herb-green-600 hover:bg-gray-100 px-6 py-3 text-base font-semibold rounded-lg transition-colors w-full text-left block"
+                  >
                     👉 Đặt lịch ngay
-                  </button>
-                  <button className="border-2 border-white text-white hover:bg-white hover:text-herb-green-600 px-6 py-3 text-base font-semibold bg-transparent rounded-lg transition-colors w-full text-left">
+                  </a>
+                  <a
+                    href="https://lang-connect-tpye.vercel.app/kien-thuc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border-2 border-white text-white hover:bg-white hover:text-herb-green-600 px-6 py-3 text-base font-semibold bg-transparent rounded-lg transition-colors w-full text-left block"
+                  >
                     👉 Thư viện YHCT
-                  </button>
-                  <button className="border-2 border-white text-white hover:bg-white hover:text-herb-green-600 px-6 py-3 text-base font-semibold bg-transparent rounded-lg transition-colors w-full text-left whitespace-nowrap">
+                  </a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61575814304088&locale=vi_VN"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border-2 border-white text-white hover:bg-white hover:text-herb-green-600 px-6 py-3 text-base font-semibold bg-transparent rounded-lg transition-colors w-full text-left block whitespace-nowrap"
+                  >
                     🤝 Cộng đồng LangConnect
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -95,8 +110,7 @@ export default function FinalCTASection() {
                     </div>
                     <div>
                       <h5 className="font-semibold text-white">Email</h5>
-                      <p className="text-herb-green-100">langconnect2025@gmail.com
-                      </p>
+                      <p className="text-herb-green-100">langconnect2025@gmail.com</p>
                     </div>
                   </div>
 

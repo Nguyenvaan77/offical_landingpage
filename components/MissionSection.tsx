@@ -75,13 +75,23 @@ export default function MissionSection() {
                   Hãy cùng chúng tôi xây dựng một cộng đồng Y học cổ truyền minh bạch và hiệu quả
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                  <button className="bg-gradient-to-r from-herb-green-500 to-herb-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-herb-green-600 hover:to-herb-green-700 transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61575814304088&locale=vi_VN"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-herb-green-500 to-herb-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-herb-green-600 hover:to-herb-green-700 transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  >
                     <span>🤝</span>
                     <span>Tham gia cộng đồng LangConnect</span>
-                  </button>
-                  <button className="border-2 border-herb-green-500 text-herb-green-600 px-6 py-3 rounded-xl font-semibold hover:bg-herb-green-50 transition-all duration-300">
+                  </a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61575814304088&locale=vi_VN"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border-2 border-herb-green-500 text-herb-green-600 px-6 py-3 rounded-xl font-semibold hover:bg-herb-green-50 transition-all duration-300"
+                  >
                     Tìm hiểu thêm
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
