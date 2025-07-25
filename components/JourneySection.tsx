@@ -51,15 +51,35 @@ export default function JourneySection() {
           </div>
 
           {/* Right Image */}
-          <div className="relative">
-            <div className="relative z-10">
-              <Image
-                src="/img/memcab/thay_thuoc.png"
-                alt="Thầy thuốc thực địa"
-                width={600}
-                height={400}
-                className="w-full h-auto shadow-2xl"
-                style={{ borderRadius: "32px 0px 32px 0px" }}
+          <div className="relative flex justify-center items-center min-h-[500px]">
+            <div className="relative z-10 grid grid-cols-2 grid-rows-2 gap-10 w-full max-w-[900px] mx-auto py-6">
+              <img
+                src="/img/thucdia/thucdia1.png"
+                alt="Thực địa 1"
+                className="shadow-2xl rounded-[40px] object-cover select-none"
+                style={{ width: 320, height: 240 }}
+                draggable={false}
+              />
+              <img
+                src="/img/thucdia/thucdia2.png"
+                alt="Thực địa 2"
+                className="shadow-2xl rounded-[40px] object-cover select-none"
+                style={{ width: 320, height: 240 }}
+                draggable={false}
+              />
+              <img
+                src="/img/thucdia/thucdia3.png"
+                alt="Thực địa 3"
+                className="shadow-2xl rounded-[40px] object-cover select-none"
+                style={{ width: 320, height: 240 }}
+                draggable={false}
+              />
+              <img
+                src="/img/thucdia/thucdia4.png"
+                alt="Thực địa 4"
+                className="shadow-2xl rounded-[40px] object-cover select-none"
+                style={{ width: 320, height: 240 }}
+                draggable={false}
               />
             </div>
             {/* Decorative background */}

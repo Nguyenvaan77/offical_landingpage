@@ -12,6 +12,7 @@ const problems = [
     bgColor: "bg-red-50",
     borderColor: "border-red-200",
     accentColor: "bg-red-100",
+    image: "/img/image1.png",
   },
   {
     icon: DollarSign,
@@ -21,6 +22,7 @@ const problems = [
     bgColor: "bg-amber-50",
     borderColor: "border-amber-200",
     accentColor: "bg-amber-100",
+    image: "/img/image2.png",
   },
   {
     icon: MessageCircle,
@@ -30,6 +32,7 @@ const problems = [
     bgColor: "bg-orange-50",
     borderColor: "border-orange-200",
     accentColor: "bg-orange-100",
+    image: "/img/image3.png",
   },
 ]
 
@@ -54,9 +57,19 @@ export default function ProblemsSection() {
               className={`group relative p-6 ${problem.bgColor} hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 ${problem.borderColor} card-hover-effect`}
               style={{
                 borderRadius: index === 0 ? "0px" : index === 1 ? "24px" : "12px 0px 24px 0px",
+                overflow: "hidden",
               }}
             >
-              <div className="text-center space-y-3">
+              {/* Background image blur */}
+              <img
+                src={problem.image}
+                alt="background"
+                className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none select-none z-0"
+                style={{
+                  borderRadius: index === 0 ? "0px" : index === 1 ? "24px" : "12px 0px 24px 0px",
+                }}
+              />
+              <div className="relative z-10 text-center space-y-3">
                 <div
                   className={`inline-flex p-3 ${problem.accentColor} border-2 ${problem.borderColor}`}
                   style={{
@@ -68,7 +81,6 @@ export default function ProblemsSection() {
                 <h3 className={`text-lg font-bold ${problem.color}`}>{problem.title}</h3>
                 <p className="text-herb-green-700 leading-relaxed text-sm">{problem.description}</p>
               </div>
-
               {/* Decorative corner */}
               <div
                 className={`absolute top-0 right-0 w-12 h-12 ${problem.accentColor} opacity-30`}

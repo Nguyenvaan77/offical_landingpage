@@ -5,16 +5,16 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 const missionPoints = [
   {
-    icon: Target,
-    text: "Bạn giúp người khác tránh rủi ro",
-  },
-  {
     icon: Heart,
     text: "Bạn ghi nhận lương y thật sự giỏi",
   },
   {
     icon: Lightbulb,
     text: "Bạn góp phần xây dựng nền YHCT rõ nguồn – sáng đạo – nhân văn",
+  },
+  {
+    icon: Target,
+    text: "Bạn giúp người khác tránh rủi ro",
   },
 ]
 

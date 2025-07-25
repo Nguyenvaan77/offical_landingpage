@@ -95,7 +95,8 @@ export default function FinalCTASection() {
                     </div>
                     <div>
                       <h5 className="font-semibold text-white">Email</h5>
-                      <p className="text-herb-green-100">contact@langconnect.vn</p>
+                      <p className="text-herb-green-100">langconnect2025@gmail.com
+                      </p>
                     </div>
                   </div>
 
@@ -105,7 +106,7 @@ export default function FinalCTASection() {
                     </div>
                     <div>
                       <h5 className="font-semibold text-white">Điện thoại</h5>
-                      <p className="text-herb-green-100">+84 123 456 789</p>
+                      <p className="text-herb-green-100">0968912734 - Phạm Thị Tuyết</p>
                     </div>
                   </div>
 
@@ -115,7 +116,7 @@ export default function FinalCTASection() {
                     </div>
                     <div>
                       <h5 className="font-semibold text-white">Địa chỉ</h5>
-                      <p className="text-herb-green-100">Đại học Dược Hà Nội, Việt Nam</p>
+                      <p className="text-herb-green-100">13-15 Lê Thánh Tông, phường Cửa Nam, thành phố Hà Nội</p>
                     </div>
                   </div>
                 </div>

@@ -21,7 +21,7 @@ export default function Home() {
       <FeaturesSection />
       <HowToUseSection />
       <MissionSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <FinalCTASection />
       <Footer />
     </main>
