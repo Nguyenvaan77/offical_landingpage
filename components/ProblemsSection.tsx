@@ -42,7 +42,7 @@ export default function ProblemsSection() {
   return (
     <section
       ref={elementRef}
-      className={`py-16 lg:py-20 bg-gradient-to-b from-herb-green-50 to-white relative overflow-hidden scroll-animate ${isVisible ? "visible" : ""}`}
+      className={`py-12 lg:py-16 bg-gradient-to-b from-herb-green-50 to-white relative overflow-hidden scroll-animate ${isVisible ? "visible" : ""}`}
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
@@ -52,7 +52,7 @@ export default function ProblemsSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-red-100 via-amber-100 to-orange-100 text-red-800 rounded-full text-sm font-medium mb-4">
             <Zap className="w-4 h-4 mr-2" />
             Những thách thức hiện tại
@@ -149,17 +149,6 @@ export default function ProblemsSection() {
               ></div>
             </div>
           ))}
-        </div>
-
-        {/* Call to action */}
-        <div className="text-center mt-12">
-          <p className="text-lg text-gray-600 mb-6">
-            Đừng để những vấn đề này cản trở hành trình chăm sóc sức khỏe của bạn
-          </p>
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-herb-green-500 to-herb-green-600 text-white rounded-full font-semibold hover:from-herb-green-600 hover:to-herb-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-            <span className="mr-2">💡</span>
-            <span>LangConnect có giải pháp cho bạn</span>
-          </div>
         </div>
       </div>
     </section>

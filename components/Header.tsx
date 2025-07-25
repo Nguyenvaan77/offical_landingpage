@@ -12,9 +12,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-herb-green-500 rounded-lg flex items-center justify-center">
-              <span className="text-white text-lg">🏥</span>
-            </div>
+            <img src="/img/logo/logo.png" alt="LangConnect Logo" className="w-8 h-8 object-contain" />
             <span className="text-xl font-bold text-herb-green-800">LangConnect</span>
           </div>
 
@@ -39,9 +37,6 @@ export default function Header() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="text-herb-green-700 hover:text-herb-green-900 font-medium transition-colors">
-              Đăng nhập
-            </button>
             <button className="bg-herb-green-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-herb-green-600 transition-colors">
               Bắt đầu
             </button>
@@ -70,9 +65,6 @@ export default function Header() {
                 Liên hệ
               </a>
               <div className="flex flex-col space-y-2 pt-4 border-t border-herb-green-200">
-                <button className="text-herb-green-700 hover:text-herb-green-900 font-medium text-left">
-                  Đăng nhập
-                </button>
                 <button className="bg-herb-green-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-herb-green-600 transition-colors">
                   Bắt đầu
                 </button>

@@ -12,6 +12,7 @@ const benefits = [
     bgPattern: "shield",
     stats: "100%",
     statsLabel: "Xác thực",
+    verificationText: "Hồ sơ được xác thực",
   },
   {
     icon: Clock,
@@ -21,6 +22,7 @@ const benefits = [
     bgPattern: "clock",
     stats: "< 5 phút",
     statsLabel: "Kết nối",
+    verificationText: "Quy trình đã được kiểm chứng",
   },
   {
     icon: Users,
@@ -30,6 +32,7 @@ const benefits = [
     bgPattern: "community",
     stats: "4.8/5",
     statsLabel: "Đánh giá",
+    verificationText: "Đánh giá được xác minh",
   },
 ]
 
@@ -39,7 +42,7 @@ export default function WhyChooseSection() {
   return (
     <section
       ref={elementRef}
-      className={`py-16 lg:py-20 bg-gradient-to-br from-white via-gray-50 to-slate-100 relative overflow-hidden scroll-animate ${isVisible ? "visible" : ""}`}
+      className={`py-12 lg:py-16 bg-gradient-to-br from-white via-gray-50 to-slate-100 relative overflow-hidden scroll-animate ${isVisible ? "visible" : ""}`}
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-5">
@@ -49,7 +52,7 @@ export default function WhyChooseSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 text-blue-800 rounded-full text-sm font-medium mb-4">
             <Star className="w-4 h-4 mr-2" />
             Ưu điểm vượt trội
@@ -61,13 +64,13 @@ export default function WhyChooseSection() {
             </span>
             ?
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Những lý do khiến hàng nghìn người tin tưởng lựa chọn LangConnect
           </p>
-          <div className="w-32 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mx-auto"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mx-auto mt-4"></div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {benefits.map((benefit, index) => (
             <div
               key={index}
@@ -75,7 +78,7 @@ export default function WhyChooseSection() {
               style={{
                 borderRadius:
                   index === 0 ? "0px 32px 0px 32px" : index === 1 ? "32px 0px 32px 0px" : "16px 32px 0px 32px",
-                minHeight: "320px",
+                minHeight: "280px",
               }}
             >
               {/* Gradient overlay on hover */}
@@ -139,17 +142,17 @@ export default function WhyChooseSection() {
                   </div>
                 </div>
 
-                {/* Bottom section */}
-                <div className="mt-6 pt-4 border-t border-gray-100 group-hover:border-transparent transition-colors duration-300">
+                {/* Bottom section - Simplified */}
+                <div className="mt-4 pt-3 border-t border-gray-100 group-hover:border-transparent transition-colors duration-300">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
                       <CheckCircle
-                        className={`w-5 h-5 text-green-500 group-hover:scale-110 transition-transform duration-300`}
+                        className={`w-4 h-4 text-green-500 group-hover:scale-110 transition-transform duration-300`}
                       />
-                      <span className="text-sm font-medium text-green-600">Đã xác minh</span>
+                      <span className="text-xs font-medium text-green-600">{benefit.verificationText}</span>
                     </div>
                     <div
-                      className={`w-8 h-1 bg-gradient-to-r ${benefit.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right`}
+                      className={`w-6 h-0.5 bg-gradient-to-r ${benefit.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right`}
                     ></div>
                   </div>
                 </div>
