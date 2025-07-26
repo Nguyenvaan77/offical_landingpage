@@ -56,7 +56,7 @@ export default function FinalCTASection() {
               <div className="flex flex-col gap-3 items-start">
                 <div className="flex flex-col gap-3 w-72">
                   <a
-                    href="https://lang-connect-tpye.vercel.app/thay-lang"
+                    href="https://langconnectvn.vercel.app/thay-lang"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white text-herb-green-600 hover:bg-gray-100 px-6 py-3 text-base font-semibold rounded-lg transition-colors w-full text-left block"
@@ -64,7 +64,7 @@ export default function FinalCTASection() {
                     👉 Đặt lịch ngay
                   </a>
                   <a
-                    href="https://lang-connect-tpye.vercel.app/kien-thuc"
+                    href="https://langconnectvn.vercel.app/kien-thuc"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="border-2 border-white text-white hover:bg-white hover:text-herb-green-600 px-6 py-3 text-base font-semibold bg-transparent rounded-lg transition-colors w-full text-left block"

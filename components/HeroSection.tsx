@@ -29,7 +29,7 @@ export default function HeroSection() {
             {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://lang-connect-tpye.vercel.app/"
+                href="https://langconnectvn.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-gradient-to-r from-herb-green-500 to-herb-green-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:from-herb-green-600 hover:to-herb-green-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
