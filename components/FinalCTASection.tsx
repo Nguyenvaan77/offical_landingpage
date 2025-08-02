@@ -2,8 +2,9 @@
 
 import type React from "react"
 import { useState } from "react"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import emailjs from "@emailjs/browser"
 
 export default function FinalCTASection() {
   const { elementRef, isVisible } = useScrollAnimation()
@@ -15,10 +16,50 @@ export default function FinalCTASection() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    alert("Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.")
-    setFormData({ name: "", email: "", phone: "", message: "" })
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      // EmailJS Configuration
+      const serviceId = "service_mocitgx" // Bạn sẽ thay thế sau
+      const templateId = "template_bixnfhc" // Bạn sẽ thay thế sau
+      const publicKey = "lBT3cesLaNsdBkftw" // Bạn sẽ thay thế sau
+
+      // Gửi email qua EmailJS
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone || "Không cung cấp",
+          message: formData.message,
+          to_email: "langconnect2025@gmail.com",
+          sent_at: new Date().toLocaleString("vi-VN"),
+          website: "LangConnect Landing Page",
+        },
+        publicKey,
+      )
+
+      setSubmitStatus("success")
+      setFormData({ name: "", email: "", phone: "", message: "" })
+
+      // Tự động ẩn thông báo sau 5 giây
+      setTimeout(() => setSubmitStatus("idle"), 5000)
+    } catch (error) {
+      console.error("Error sending email:", error)
+      setSubmitStatus("error")
+
+      // Tự động ẩn thông báo lỗi sau 5 giây
+      setTimeout(() => setSubmitStatus("idle"), 5000)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -56,7 +97,7 @@ export default function FinalCTASection() {
               <div className="flex flex-col gap-3 items-start">
                 <div className="flex flex-col gap-3 w-72">
                   <a
-                    href="https://langconnectvn.vercel.app/thay-lang"
+                    href="https://lang-connect-tpye.vercel.app/thay-lang"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white text-herb-green-600 hover:bg-gray-100 px-6 py-3 text-base font-semibold rounded-lg transition-colors w-full text-left block"
@@ -64,7 +105,7 @@ export default function FinalCTASection() {
                     👉 Đặt lịch ngay
                   </a>
                   <a
-                    href="https://langconnectvn.vercel.app/kien-thuc"
+                    href="https://lang-connect-tpye.vercel.app/kien-thuc"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="border-2 border-white text-white hover:bg-white hover:text-herb-green-600 px-6 py-3 text-base font-semibold bg-transparent rounded-lg transition-colors w-full text-left block"
@@ -138,6 +179,25 @@ export default function FinalCTASection() {
 
               {/* Contact Form */}
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                {/* Status Messages */}
+                {submitStatus === "success" && (
+                  <div className="mb-4 p-3 bg-green-500/20 border border-green-500/30 rounded-lg flex items-center space-x-2">
+                    <CheckCircle className="w-5 h-5 text-green-400" />
+                    <span className="text-green-100 text-sm">
+                      Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi trong vòng 24 giờ.
+                    </span>
+                  </div>
+                )}
+
+                {submitStatus === "error" && (
+                  <div className="mb-4 p-3 bg-red-500/20 border border-red-500/30 rounded-lg flex items-center space-x-2">
+                    <AlertCircle className="w-5 h-5 text-red-400" />
+                    <span className="text-red-100 text-sm">
+                      Có lỗi xảy ra. Vui lòng thử lại hoặc liên hệ trực tiếp qua email.
+                    </span>
+                  </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-3">
                     <div>
@@ -151,7 +211,8 @@ export default function FinalCTASection() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:ring-2 focus:ring-white focus:border-white transition-colors text-sm"
+                        disabled={isSubmitting}
+                        className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:ring-2 focus:ring-white focus:border-white transition-colors text-sm disabled:opacity-50"
                         placeholder="Nhập họ và tên"
                       />
                     </div>
@@ -165,7 +226,8 @@ export default function FinalCTASection() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:ring-2 focus:ring-white focus:border-white transition-colors text-sm"
+                        disabled={isSubmitting}
+                        className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:ring-2 focus:ring-white focus:border-white transition-colors text-sm disabled:opacity-50"
                         placeholder="Nhập số điện thoại"
                       />
                     </div>
@@ -182,7 +244,8 @@ export default function FinalCTASection() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:ring-2 focus:ring-white focus:border-white transition-colors text-sm"
+                      disabled={isSubmitting}
+                      className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:ring-2 focus:ring-white focus:border-white transition-colors text-sm disabled:opacity-50"
                       placeholder="Nhập địa chỉ email"
                     />
                   </div>
@@ -198,17 +261,28 @@ export default function FinalCTASection() {
                       rows={3}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:ring-2 focus:ring-white focus:border-white transition-colors resize-none text-sm"
+                      disabled={isSubmitting}
+                      className="w-full px-3 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:ring-2 focus:ring-white focus:border-white transition-colors resize-none text-sm disabled:opacity-50"
                       placeholder="Nhập nội dung tin nhắn..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-white text-herb-green-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2 group text-sm"
+                    disabled={isSubmitting}
+                    className="w-full bg-white text-herb-green-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2 group text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    <span>Gửi liên hệ</span>
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-herb-green-600 border-t-transparent rounded-full animate-spin"></div>
+                        <span>Đang gửi...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <span>Gửi liên hệ</span>
+                      </>
+                    )}
                   </button>
                 </form>
               </div>

@@ -81,7 +81,7 @@ export default function FeaturesSection() {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             CÁC TÍNH NĂNG{" "}
             <span className="bg-gradient-to-r from-herb-green-600 to-emerald-600 bg-clip-text text-transparent">
-              NỔI BẬT
+              Chính
             </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
